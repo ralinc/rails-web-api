@@ -13,7 +13,7 @@ class ListingTodosTest < ActionDispatch::IntegrationTest
     assert_equal 200, response.status
     assert_equal Mime::JSON, response.content_type
 
-    assert_equal Todo.count, JSON.parse(response.body).size
+    assert_equal Todo.count, json(response.body).size
   end
 
   test 'list top priority todos' do
@@ -22,6 +22,6 @@ class ListingTodosTest < ActionDispatch::IntegrationTest
     assert_equal 200, response.status
     assert_equal Mime::JSON, response.content_type
 
-    assert_equal 1, JSON.parse(response.body).size
+    assert_equal 1, json(response.body).size
   end
 end
