@@ -1,5 +1,3 @@
-# rails-api-authentication
+# Build a Rails Web API using TDD
 
-Playground for Rails basic vs token API authentication.
-
-Bonus: watch me TDD in github commits history :-)
+The commits are quite clean and self-explanatory. Follow them to see the `red => green => refactor` steps of the TDD process.
