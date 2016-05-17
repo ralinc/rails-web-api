@@ -1,6 +1,6 @@
 class DonesController < ApplicationController
   def index
-    dones = Todo.where('done_at IS NOT NULL')
+    dones = Todo.completed
     render json: dones, status: 200
   end
 end
