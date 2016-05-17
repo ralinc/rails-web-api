@@ -8,4 +8,18 @@ class TodosController < ApplicationController
 
     render json: todos, status: 200
   end
+
+  def create
+    todo = Todo.create(todo_params)
+
+    if todo.save
+      render json: todo, status: 201, location: todo
+    end
+  end
+
+  private
+
+    def todo_params
+      params.require(:todo).permit()
+    end
 end
