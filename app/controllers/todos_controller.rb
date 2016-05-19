@@ -14,6 +14,8 @@ class TodosController < ApplicationController
 
     if todo.save
       render json: todo, status: 201, location: todo
+    else
+      render json: todo.errors, status: 422
     end
   end
 
