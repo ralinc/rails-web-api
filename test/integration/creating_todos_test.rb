@@ -18,5 +18,8 @@ class CreatingTodosTest < ActionDispatch::IntegrationTest
 
     todo = json(response.body)
     assert_equal todo_url(todo[:id]), response.location
+
+    assert_equal 'Buy extra chocolate', todo[:title]
+    assert_equal 5, todo[:priority]
   end
 end
